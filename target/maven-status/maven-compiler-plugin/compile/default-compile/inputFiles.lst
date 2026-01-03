@@ -1,8 +1,12 @@
+C:\Users\amanu\store-management\src\main\java\com\store\dao\CustomerDAO.java
 C:\Users\amanu\store-management\src\main\java\com\store\dao\DBConnection.java
 C:\Users\amanu\store-management\src\main\java\com\store\dao\ProductDAO.java
-C:\Users\amanu\store-management\src\main\java\com\store\dao\UserDAO.java
+C:\Users\amanu\store-management\src\main\java\com\store\dao\SaleDAO.java
 C:\Users\amanu\store-management\src\main\java\com\store\filter\AuthFilter.java
+C:\Users\amanu\store-management\src\main\java\com\store\model\Customer.java
+C:\Users\amanu\store-management\src\main\java\com\store\model\Order.java
 C:\Users\amanu\store-management\src\main\java\com\store\model\Product.java
+C:\Users\amanu\store-management\src\main\java\com\store\model\Sale.java
 C:\Users\amanu\store-management\src\main\java\com\store\network\StoreServer.java
 C:\Users\amanu\store-management\src\main\java\com\store\rmi\PriceService.java
 C:\Users\amanu\store-management\src\main\java\com\store\rmi\PriceServiceImpl.java
@@ -14,5 +18,6 @@ C:\Users\amanu\store-management\src\main\java\com\store\servlet\EditProductServl
 C:\Users\amanu\store-management\src\main\java\com\store\servlet\LoginServlet.java
 C:\Users\amanu\store-management\src\main\java\com\store\servlet\LogoutServlet.java
 C:\Users\amanu\store-management\src\main\java\com\store\servlet\ProductServlet.java
-C:\Users\amanu\store-management\src\main\java\com\store\servlet\SignupServlet.java
-C:\Users\amanu\store-management\src\main\java\com\store\servlet\UserProductServlet.java
+C:\Users\amanu\store-management\src\main\java\com\store\servlet\SellProductServlet.java
+C:\Users\amanu\store-management\src\main\java\com\store\servlet\SoldSummaryServlet.java
+C:\Users\amanu\store-management\src\main\java\com\store\util\DBUtil.java

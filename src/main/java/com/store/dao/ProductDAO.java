@@ -1,5 +1,9 @@
 package com.store.dao;
 
+<<<<<<< HEAD
+public class ProductDAO {
+
+=======
 import com.store.model.Product;
 import java.sql.*;
 import java.util.*;
@@ -160,4 +164,5 @@ public List<Product> getSoldProducts() throws Exception {
 }
 
 
+>>>>>>> 864d63c132408056cc60481b5e87ba363165a607
 }

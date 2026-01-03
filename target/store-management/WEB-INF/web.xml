@@ -10,19 +10,34 @@
         <url-pattern>/products</url-pattern>
     </servlet-mapping>
 
-    <welcome-file-list>
-        <welcome-file>index.jsp</welcome-file>
-    </welcome-file-list>
-
-
     <servlet>
-    <servlet-name>AddProductServlet</servlet-name>
-    <servlet-class>com.store.servlet.AddProductServlet</servlet-class>
-</servlet>
+            <servlet-name>AddProductServlet</servlet-name>
+            <servlet-class>com.store.servlet.AddProductServlet</servlet-class>
+        </servlet>
 
+        <servlet-mapping>
+            <servlet-name>AddProductServlet</servlet-name>
+            <url-pattern>/addProduct</url-pattern>
+        </servlet-mapping>
+
+        <!-- Delete Product -->
+<servlet>
+    <servlet-name>DeleteProductServlet</servlet-name>
+    <servlet-class>com.store.servlet.DeleteProductServlet</servlet-class>
+</servlet>
 <servlet-mapping>
-    <servlet-name>AddProductServlet</servlet-name>
-    <url-pattern>/addProduct</url-pattern>
+    <servlet-name>DeleteProductServlet</servlet-name>
+    <url-pattern>/deleteProduct</url-pattern>
+</servlet-mapping>
+
+<!-- Edit Product -->
+<servlet>
+    <servlet-name>EditProductServlet</servlet-name>
+    <servlet-class>com.store.servlet.EditProductServlet</servlet-class>
+</servlet>
+<servlet-mapping>
+    <servlet-name>EditProductServlet</servlet-name>
+    <url-pattern>/editProduct</url-pattern>
 </servlet-mapping>
 
 
@@ -64,49 +79,24 @@
     <welcome-file>login.jsp</welcome-file>
 </welcome-file-list>
 
-
-
-<!-- Delete Product -->
 <servlet>
-    <servlet-name>DeleteProductServlet</servlet-name>
-    <servlet-class>com.store.servlet.DeleteProductServlet</servlet-class>
+    <servlet-name>SellProduct</servlet-name>
+    <servlet-class>com.store.servlet.SellProductServlet</servlet-class>
 </servlet>
 <servlet-mapping>
-    <servlet-name>DeleteProductServlet</servlet-name>
-    <url-pattern>/deleteProduct</url-pattern>
-</servlet-mapping>
-
-<!-- Edit Product -->
-<servlet>
-    <servlet-name>EditProductServlet</servlet-name>
-    <servlet-class>com.store.servlet.EditProductServlet</servlet-class>
-</servlet>
-<servlet-mapping>
-    <servlet-name>EditProductServlet</servlet-name>
-    <url-pattern>/editProduct</url-pattern>
-</servlet-mapping>
-
-<servlet>
-    <servlet-name>UserProductServlet</servlet-name>
-    <servlet-class>com.store.servlet.UserProductServlet</servlet-class>
-</servlet>
-<servlet-mapping>
-    <servlet-name>UserProductServlet</servlet-name>
-    <url-pattern>/userProducts</url-pattern>
-</servlet-mapping>
-
-<servlet>
-    <servlet-name>SignupServlet</servlet-name>
-    <servlet-class>com.store.servlet.SignupServlet</servlet-class>
-</servlet>
-
-<servlet-mapping>
-    <servlet-name>SignupServlet</servlet-name>
-    <url-pattern>/signup</url-pattern>
+    <servlet-name>SellProduct</servlet-name>
+    <url-pattern>/sellProduct</url-pattern>
 </servlet-mapping>
 
 
-
+<servlet>
+    <servlet-name>SoldSummary</servlet-name>
+    <servlet-class>com.store.servlet.SoldSummaryServlet</servlet-class>
+</servlet>
+<servlet-mapping>
+    <servlet-name>SoldSummary</servlet-name>
+    <url-pattern>/soldSummary</url-pattern>
+</servlet-mapping>
 
 
 

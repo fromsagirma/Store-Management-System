@@ -4,13 +4,15 @@
 <head>
 <meta charset="UTF-8">
 <title>Store Dashboard</title>
-<link rel="stylesheet" href="assets/css/style.css">
+<link rel="stylesheet"
+      href="${pageContext.request.contextPath}/assets/css/style.css?v=1">
 </head>
+
 <body>
 
 <header>
     <div>
-        <img src="assets/images/logo.png" alt="Logo">
+        <img src="assets/images/logo3.png" alt="Logo">
         <strong>Store Management</strong>
     </div>
     <div>
@@ -27,21 +29,38 @@
 
     <!-- Dashboard Statistics -->
     <c:set var="stats" value="${productsDAO.getStats()}" />
-    <div class="dashboard-cards">
-    <div class="card total-products">
+    <div class="stats">
+    <div class="card">
         <h3>Total Products</h3>
-        <p>${stats.totalProducts}</p>
+        <p>${totalProducts}</p>
     </div>
-    <div class="card total-stock">
+    <div class="card">
         <h3>Total Stock</h3>
-        <p>${stats.totalQuantity}</p>
+        <p>${totalStock}</p>
     </div>
-    <div class="card total-value">
-        <h3>Total Inventory Value</h3>
-        <p>${stats.totalValue}</p>
-    </div>
+    <div class="card">
+    <h3>Products Sold</h3>
+    <p>${totalSold}</p>
+    <a href="soldSummary" class="btn-view">View Sold Products</a>
+
+      </div>
+      <div class="card">
+    <h3>Customers</h3>
+    <p>${totalCustomers}</p>
 </div>
 
+<div class="card">
+    <h3>Orders</h3>
+    <p>${totalOrders}</p>
+</div>
+
+
+
+
+      
+
+
+</div>
 
     <!-- Add Product Form -->
     <h2>Add New Product</h2>
@@ -50,12 +69,19 @@
         <input type="number" step="0.01" name="price" placeholder="Price" required>
         <input type="number" name="quantity" placeholder="Quantity" required>
         <button type="submit">Add Product</button>
-        <button type="submit">Sell</button>
     </form>
 
     <!-- Product Table -->
-    <h2>Product Inventory</h2>
+    
     <c:if test="${not empty products}">
+        <h2>Product Inventory</h2>
+        <input type="text" id="search" class="search-input"
+       placeholder="Search products..."
+       onkeyup="filterTable()">
+
+
+       
+
         <table>
             <tr>
                 <th>Name</th>
@@ -72,6 +98,17 @@
                         <a href="editProduct?id=${p.id}">Edit</a> |
                         <a href="deleteProduct?id=${p.id}" onclick="return confirm('Are you sure?')">Delete</a>
                     </td>
+                    <td>
+                        <form action="sellProduct" method="post" style="display:inline-block;">
+                            <input type="hidden" name="id" value="${p.id}">
+                            <input type="number" name="quantity" placeholder="Qty" min="1" max="${p.quantity}" 
+                                required style="width:60px; padding:4px; border-radius:4px; border:1px solid #ccc;">
+                            <button type="submit" class="btn-sell">Sell</button>
+                        </form>
+                        
+                    </td>
+
+
                 </tr>
             </c:forEach>
         </table>
@@ -82,6 +119,19 @@
     </c:if>
 
 </div>
+
+<script>
+function filterTable() {
+    let input = document.getElementById("search").value.toLowerCase();
+    let rows = document.querySelectorAll("table tr");
+
+    rows.forEach((row, index) => {
+        if (index === 0) return;
+        row.style.display =
+            row.innerText.toLowerCase().includes(input) ? "" : "none";
+    });
+}
+</script>
 
 </body>
 </html>
