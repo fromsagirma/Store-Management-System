@@ -44,6 +44,15 @@
     <a href="soldSummary" class="btn-view">View Sold Products</a>
 
       </div>
+      <div class="card">
+    <h3>Customers</h3>
+    <p>${totalCustomers}</p>
+</div>
+
+
+
+
+
 
       
 
